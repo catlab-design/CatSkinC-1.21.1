@@ -1,37 +1,40 @@
 {
   "schemaVersion": 1,
-  "id": "catskinc-remake-1_21_1",
+  "id": "catskinc-remake",
   "version": "${version}",
-  "name": "CatSkinC-Remake-1.21.1",
-  "description": "",
+  "name": "CatSkinC-Remake",
+  "description": "Cloud skin upload and live sync for CatSkinC.",
   "authors": [
     "Q Team Studio"
   ],
   "contact": {
     "homepage": "https://dotpp.xyz"
   },
-  "license": "unlicense",
-  "icon": "assets/catskinc-remake-1_21_1/icon.png",
-  "environment": "*",
+  "license": "MIT",
+  "icon": "assets/catskinc-remake/icon.png",
+  "environment": "client",
   "entrypoints": {
     "main": [
-      "com.sammy.catskincRemake1_21_1.fabric.CatskincRemake1_21_1Fabric"
+      "com.sammy.catskincRemake.fabric.CatskincRemakeFabric"
     ],
     "client": [
-      "com.sammy.catskincRemake1_21_1.fabric.client.CatskincRemake1_21_1FabricClient"
+      "com.sammy.catskincRemake.fabric.client.CatskincRemakeFabricClient"
     ]
   },
   "mixins": [
-    "catskinc-remake-1_21_1.mixins.json"
+    "catskinc-remake.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.18.4",
-    "minecraft": "~1.21.1",
-    "java": ">=21",
-    "architectury": ">=13.0.8",
+    "fabricloader": "${fabric_loader_version_range}",
+    "minecraft": "${minecraft_version_range}",
+    "java": "${java_version_range}",
+    "architectury": "${architectury_version_range}",
     "fabric-api": "*"
   },
   "suggests": {
-    "another-mod": "*"
+    "voicechat": "*",
+    "plasmovoice": "*",
+    "figura": "*",
+    "emotecraft": "*"
   }
 }

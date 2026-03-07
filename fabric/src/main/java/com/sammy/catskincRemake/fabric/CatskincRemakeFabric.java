@@ -1,9 +1,9 @@
-package com.sammy.catskincRemake1_21_1.fabric;
+package com.sammy.catskincRemake.fabric;
 
-import com.sammy.catskincRemake1_21_1.CatskincRemake1_21_1;
+import com.sammy.catskincRemake.CatskincRemake;
 import net.fabricmc.api.ModInitializer;
 
-public final class CatskincRemake1_21_1Fabric implements ModInitializer {
+public final class CatskincRemakeFabric implements ModInitializer {
     @Override
     public void onInitialize() {
         // This code runs as soon as Minecraft is in a mod-load-ready state.
@@ -11,6 +11,6 @@ public final class CatskincRemake1_21_1Fabric implements ModInitializer {
         // Proceed with mild caution.
 
         // Run our common setup.
-        CatskincRemake1_21_1.init();
+        CatskincRemake.init();
     }
 }
