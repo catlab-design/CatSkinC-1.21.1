@@ -11,6 +11,7 @@ public final class VoiceStateNetworkClient {
     private VoiceStateNetworkClient() {
     }
 
+    @SuppressWarnings("removal")
     public static synchronized void init() {
         if (initialized) {
             return;

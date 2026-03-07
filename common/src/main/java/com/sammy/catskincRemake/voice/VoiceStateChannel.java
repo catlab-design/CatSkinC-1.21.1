@@ -6,7 +6,6 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
-import java.lang.reflect.Method;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -20,20 +19,7 @@ public final class VoiceStateChannel {
     }
 
     private static ResourceLocation createChannelId() {
-        try {
-            Method of = ResourceLocation.class.getMethod("of", String.class, String.class);
-            return (ResourceLocation) of.invoke(null, "catskinc_remake", "voice_state");
-        } catch (Exception ignored) {
-        }
-        try {
-            Method tryParse = ResourceLocation.class.getMethod("tryParse", String.class);
-            ResourceLocation parsed = (ResourceLocation) tryParse.invoke(null, "catskinc_remake:voice_state");
-            if (parsed != null) {
-                return parsed;
-            }
-        } catch (Exception ignored) {
-        }
-        throw new IllegalStateException("Failed to create voice_state channel identifier");
+        return ResourceLocation.fromNamespaceAndPath("catskinc_remake", "voice_state");
     }
 
     public static void bindServer(MinecraftServer server) {
@@ -50,6 +36,7 @@ public final class VoiceStateChannel {
         }
     }
 
+    @SuppressWarnings("removal")
     public static void broadcast(UUID uuid, boolean speaking) {
         if (uuid == null) {
             return;
