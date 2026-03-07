@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "catskinc-remake-1_21_1",
+  "version": "${version}",
+  "name": "CatSkinC-Remake-1.21.1",
+  "description": "",
+  "authors": [
+    "Q Team Studio"
+  ],
+  "contact": {
+    "homepage": "https://dotpp.xyz"
+  },
+  "license": "unlicense",
+  "icon": "assets/catskinc-remake-1_21_1/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.sammy.catskincRemake1_21_1.fabric.CatskincRemake1_21_1Fabric"
+    ],
+    "client": [
+      "com.sammy.catskincRemake1_21_1.fabric.client.CatskincRemake1_21_1FabricClient"
+    ]
+  },
+  "mixins": [
+    "catskinc-remake-1_21_1.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "architectury": ">=13.0.8",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
